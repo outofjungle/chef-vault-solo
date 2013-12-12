@@ -25,33 +25,27 @@ describe ChefVault::Item do
   context 'when Chef::Config[:solo] = false' do
     before :each do
       ChefVault::Item.stub(:solo?).and_return(false)
-      ChefVault::Item.stub(:load_vault).with('vagrant', 'secrets').and_return(secrets)
     end
 
     it 'ChefVault reads from local data_bag' do
+      ChefVault::Item.stub(:load_vault).with('vagrant', 'secrets').and_return(secrets)
       ChefVault::Item.should_receive(:load_vault).with('vagrant', 'secrets').exactly(1).times
       items = ChefVault::Item.load('vagrant', 'secrets')
       expect(items).to equal(secrets)
     end
-  end
-
-
-  context 'when Chef::Config[:solo] = false' do
-    before :each do
-      ChefVault::Item.stub(:solo?).and_return(false)
-      @chef_vault_item = double(ChefVault::Item)
-      @encrypted_data_bag_item = double(Chef::EncryptedDataBagItem)
-    end
 
     it 'the control should flow to original ChefVault::Item.load() method' do
+      @chef_vault_item = double(ChefVault::Item)
+      @encrypted_data_bag_item = double(Chef::EncryptedDataBagItem)
+
       ChefVault::Item.should_receive(:new)
-        .exactly(1).times
-        .and_return(@chef_vault_item)
+      .exactly(1).times
+      .and_return(@chef_vault_item)
 
       Chef::EncryptedDataBagItem.should_receive(:load)
-        .with('vagrant', 'secrets', 'item_secret')
-        .exactly(1).times
-        .and_return(@encrypted_data_bag_item)
+      .with('vagrant', 'secrets', 'item_secret')
+      .exactly(1).times
+      .and_return(@encrypted_data_bag_item)
 
       @chef_vault_item.should_receive(:load_keys).with('vagrant', 'secrets_keys').exactly(1).times
       @chef_vault_item.should_receive(:secret).exactly(1).times.and_return('item_secret')
