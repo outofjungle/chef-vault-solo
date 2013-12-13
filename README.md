@@ -1,1 +1,5 @@
-[![Build Status](https://travis-ci.org/outofjungle/chef-vault-solo.png?branch=master)](https://travis-ci.org/outofjungle/chef-vault-solo) [![Gem Version](https://badge.fury.io/rb/chef-vault-solo.png)](http://badge.fury.io/rb/chef-vault-solo) [![Code Climate](https://codeclimate.com/github/outofjungle/chef-vault-solo.png)](https://codeclimate.com/github/outofjungle/chef-vault-solo) [![Dependency Status](https://gemnasium.com/outofjungle/chef-vault-solo.png)](https://gemnasium.com/outofjungle/chef-vault-solo)
+[![Build Status](https://travis-ci.org/outofjungle/chef-vault-solo.png?branch=master)](https://travis-ci.org/outofjungle/chef-vault-solo)
+[![Gem Version](https://badge.fury.io/rb/chef-vault-solo.png)](http://badge.fury.io/rb/chef-vault-solo)
+[![Code Climate](https://codeclimate.com/github/outofjungle/chef-vault-solo.png)](https://codeclimate.com/github/outofjungle/chef-vault-solo)
+[![Dependency Status](https://gemnasium.com/outofjungle/chef-vault-solo.png)](https://gemnasium.com/outofjungle/chef-vault-solo)
+[![Coverage Status](https://coveralls.io/repos/outofjungle/chef-vault-solo/badge.png?branch=master)](https://coveralls.io/r/outofjungle/chef-vault-solo?branch=master)
