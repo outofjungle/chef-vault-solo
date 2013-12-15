@@ -11,7 +11,7 @@ Monkey patches chef-vault to read from local data bag when run in solo mode.
 
 ## Usage
 
-Install `chef-vault-sol0` gem and require the `chef-vault/patch` to patch the chef-vault behavior.
+Install `chef-vault-solo` gem and require the `chef-vault/patch` to patch the chef-vault behavior.
 
     chef_gem 'chef-vault-solo'
     require 'chef-vault/patch'
