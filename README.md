@@ -19,3 +19,8 @@ In your code, require `chef-vault-sol` gem and require the `chef-vault/patch` to
     secrets = ChefVault::Item.load('data_bag', 'item')
 
 When `Chef::Config[:solo]` is `true`, this method will read the data from `data_bags/data_bag/item.json` file.
+
+## Example cookbook
+
+Please visit the example cookbook that uses this gem. 
+[chef-vault-solo-cookbook](https://github.com/outofjungle/chef-vault-solo-cookbook)
